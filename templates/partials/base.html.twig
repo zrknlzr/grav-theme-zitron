@@ -1,0 +1,45 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+	<head>
+		{% block head %}
+			<meta charset="utf-8"/>
+			<title>
+				{% if header.title %}
+					{{ header.title|e('html') }}
+					|
+				{% endif %}
+				{{ site.title|e('html') }}</title>
+			<meta content="IE=edge" http-equiv="X-UA-Compatible">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+			{% include 'partials/metadata.html.twig' %}
+
+			<link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}"/>
+			<link rel="canonical" href="{{ page.url(true, true) }}"/>
+
+			{% block stylesheets %}
+				{% do assets.addCss('theme://css/styles.css', 100) %}
+			{% endblock %}
+			{{ assets.css()|raw }}
+			{% block javascripts %}
+				{% do assets.addJs('theme://js/zitron.min.js', 100) %}
+			{% endblock %}
+		{% endblock head %}
+	</head>
+	<body>
+		<div
+			class="wrapper">
+			<!-- fixed vertical sidebar -->
+			<section class="sidebar ">
+				{% block navigation %}
+					{% include 'partials/navigation.html.twig' %}
+				{% endblock %}
+			</section>
+			<!-- main content of the page -->
+			<section class="content"> {% block content %}{% endblock %}
+				</section>
+			</div>
+
+			{{ assets.js()|raw }}
+		</body>
+	</html>

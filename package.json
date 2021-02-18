@@ -1,0 +1,30 @@
+{
+  "name": "grav-theme-zitron",
+  "version": "1.0.0",
+  "author": "zrknlzr",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zrknlzr/grav-theme-zitron.git"
+  },
+  "scripts": {
+    "js": "esbuild js/zitron.js --bundle --minify --outfile=js/zitron.min.js",
+    "scss": "node-sass -o css scss --output-style compressed",
+    "postcss": "postcss css/styles.css -r --use autoprefixer",
+    "build:all": "npm run js && npm run scss && npm run postcss",
+    "deploy": "mkdir -p ~/Sites/grav/user/themes/zitron && cp -R * ~/Sites/grav/user/themes/zitron/",
+    "build:testing": "npm run build:all && npm run deploy"
+  },
+  "dependencies": {
+    "imagesloaded": "^4.1.4",
+    "isotope-layout": "^3.0.6",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.8.32",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.1.13",
+    "postcss-cli": "^8.2.0",
+    "autoprefixer": "^10.0.1"
+  }
+}

@@ -1,0 +1,13 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<div class="content--project">
+		<h1>{{ page.title }}</h1>
+		{% if page.header.video %}
+			<div class="video--container">
+				<iframe src="{{ page.header.video }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		{% endif %}
+		{{ page.content|raw }}
+	</div>
+{% endblock %}

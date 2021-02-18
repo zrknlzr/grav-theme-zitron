@@ -1,0 +1,58 @@
+// keyframes
+@keyframes bgcycle {
+    0% {
+        background: #ee6055;
+    }
+
+    25% {
+        background: #60d394;
+    }
+
+    50% {
+        background: #aaf683;
+    }
+
+    75% {
+        background: #fcff00;
+    }
+
+    100% {
+        background: #ff9b85;
+    }
+}
+
+@keyframes fontcolor {
+    0% {
+        color: #ee6055;
+    }
+
+    25% {
+        color: #60d394;
+    }
+
+    50% {
+        color: #aaf683;
+    }
+
+    75% {
+        color: #fcff00;
+    }
+
+    100% {
+        color: #ff9b85;
+    }
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+        transform: scaleY(1.1)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}

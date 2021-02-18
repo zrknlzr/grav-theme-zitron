@@ -1,0 +1,52 @@
+{% block header %}
+	<header>
+		<a href="{{ base_url == '' ? '/' : base_url }}">
+			{% if theme.sidebar.logo|first %}
+				{% set logo_file = (theme.sidebar.logo|first).name %}
+				<img class="sidebar--logo" src="{{ url('theme://images/' ~ logo_file) }}" alt="{{ config.site.title }}"/>
+			{% else %}
+				<img class="sidebar--logo" src="{{ url('theme://images/zitron_smol.png') }}" alt="{{ config.site.title }}"/>
+			{% endif %}
+		</a>
+		<button class="mobile--menu">MENU</button>
+	</header>
+	<nav>
+		<ul class="sidebar--nav">
+			<li class="nav--item">
+				<a class="filter wildcard" data-filter="*" href="{{ base_url == '' ? '/' : base_url }}#filter=*">Everything</a>
+			</li>
+			{% for cat in theme.categories %}
+				<li class="nav--item">
+					<a class="filter cat" data-filter=".{{ cat|lower }}" href="{{ base_url == '' ? '/' : base_url }}#filter=.{{ cat|lower }}">{{ cat }}</a>
+				</li>
+			{% endfor %}
+			{% if theme.header.enable.customnav == true %}
+				{% for item in theme.header.navitems %}
+					{% if  item.useurl == true %}
+						<li class="nav--item">
+							<a class="link ext" href="{{ item.url }}" target="_blank">{{ item.linkname }}</a>
+						</li>
+					{% else %}
+						<li class="nav--item">
+							<a class="link page" href="{{ item.page }}">{{ item.linkname }}</a>
+						</li>
+					{% endif %}
+
+				{% endfor %}
+			{% else %}
+				{% for page in pages.children %}
+					{% if page.visible %}
+						<li class="nav--item">
+							<a class="link--page" href="{{ page.url }}">{{ page.menu }}</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</ul>
+	</nav>
+	<footer>
+		<span>
+			{{ theme.copyname }}
+			{{ "now"|date("Y") }}</span>
+	</footer>
+{% endblock %}

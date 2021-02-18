@@ -1,0 +1,94 @@
+name: Zitron
+slug: zitron
+type: theme
+version: 1.0
+description: a slightly fizzy portfolio theme
+icon:  lemon-o
+author:
+  name: zrknlzr
+  email: zrknlzr@tuta.io
+homepage: https://github.com/zrknlzr/
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+
+    sidebar.logo:
+      type: file
+      label: Custom Logo
+      size: large
+      destination: 'theme@:/images'
+      multiple: false
+      description: Stop being sour and show off your own logo.
+      accept:
+        - image/*
+    sidebar.logomobile:
+      type: file
+      label: Custom Logo Mobile
+      size: large
+      destination: 'theme@:/images'
+      multiple: false
+      description: If you need a seperate version for mobile
+      accept:
+        - image/*
+    categories:
+      type: selectize
+      size: large
+      id: zitron-categories-select
+      allowEmptyOption: true
+      merge_items: true
+      label: Filter Categories
+      help: Use filters for your gallery
+      validate:
+        type: commalist
+    header.enable.customnav:
+      type: toggle
+      label: Use custom navigation
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    header.navitems:
+      name: Custom navigation items
+      type: list
+      style: vertical
+      label: Custom navigation items
+      fields:
+        .linkname:
+          type: text
+          label: Link name
+        .page:
+          type: pages
+          label: Choose a page
+          size: medium
+          classes: fancy
+          multiple: false
+          show_all: true
+          show_modular: false
+          show_root: false
+        .useurl:
+          type: toggle
+          label: Use external link instead
+          highlight: 1
+          default: 0
+          options:
+              1: 'Yes'
+              0: 'No'
+          validate:
+              type: bool
+        .url:
+          type: text
+          label: External Link (eg. Social Media)
+    copyname:
+      type: text
+      size: large
+      label: Footer license
+    
+    

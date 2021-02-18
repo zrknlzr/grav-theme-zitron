@@ -1,0 +1,22 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	{% if page.children %}
+		<div id="container" class="gallery">
+			<div class="gallery-sizer"></div>
+			{% for child in page.children %}
+				{% if child.visible %}
+					<div class="gallery-item {{ child.taxonomy.category[0]|lower }} ">
+						<a href="{{ child.url }}">
+							<img alt="" src="{{ child.media.images|first.cache.url() }}">
+						</a>
+						<span class="">{{ child.title }}</span>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% else %}
+		<h1>Please add some projects</h1>
+		<p>It seems you don't have added any projects yet or they're still hidden.</p>
+	{% endif %}
+{% endblock %}

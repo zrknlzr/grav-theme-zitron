@@ -1,0 +1,26 @@
+dropdown:
+  enabled: true
+copyname: 'Zitron Theme'
+categories:
+  - Illustration
+  - Animation
+  - Paintings
+  - Sequential
+header:
+  enablenav: '1'
+  navitems:
+    -
+      linkname: Typography
+      page: /typography
+      useurl: false
+      url: null
+    -
+      linkname: 'Social Media'
+      page: /works
+      useurl: true
+      url: 'https://pixelfed.org/'
+  enable:
+    customnav: true
+sidebar:
+  logo: {  }
+  logomobile: {  }
