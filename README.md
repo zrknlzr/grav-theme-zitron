@@ -1,6 +1,6 @@
 # Zitron Theme for Grav
 
-A slightly fizzy [Grav](http://getgrav.org) portfolio theme for artists and illustrators.
+A slightly fizzy [Grav](http://getgrav.org) portfolio theme for artists and illustrators. Please be aware this is still in development and mostly untested. The v1.0.0 stable version will include, among other things, a blog, optimized gallery loading and basic documentation.
 
 # Features
 
