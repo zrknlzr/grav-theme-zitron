@@ -31,7 +31,7 @@
         height: auto;
         position: relative;
         display: flex;
-        flex: 0 0 300px;
+        flex: 0 0 240px;
         padding: 30px 40px;
 
         &+.content {
@@ -45,13 +45,12 @@
         flex-flow: row nowrap;
 
         .sidebar--logo {
-            max-width: 150px;
+            max-width: 160px;
             max-height: 80px;
             width: 100%;
 
             @media (min-width: 780px) {
                 max-height: none;
-                max-width: 220px;
             }
         }
 
