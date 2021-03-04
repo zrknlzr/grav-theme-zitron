@@ -149,18 +149,21 @@
             }
         }
     }
+}
 
-    footer {
-        padding: 20px 0;
-        display: none;
+footer {
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
 
-        span {
-            color: $grey-two;
-            font-size: 15px;
-        }
-
-        @media (min-width: 780px) {
-            display: block;
-        }
+    @media (min-width: 780px) {
+        display: block;
+        text-align: left;
     }
+
+    span {
+        color: $grey-two;
+        font-size: 15px;
+    }
+
 }
