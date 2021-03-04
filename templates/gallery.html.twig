@@ -8,8 +8,7 @@
 				{% if child.visible %}
 					<div class="gallery-item {{ child.taxonomy.category[0]|lower }} ">
 						<a href="{{ child.url }}">
-							{% set galleryImage = child.media.all|first.cache.url() %}
-							<img alt="" src="{{ galleryImage.url() }}">
+							{{ child.media.all|first.cache.html|raw }}
 						</a>
 						<span class="">{{ child.title }}</span>
 					</div>
