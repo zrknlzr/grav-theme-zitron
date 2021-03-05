@@ -90,5 +90,14 @@ form:
       type: text
       size: large
       label: Footer license
+    funnyexception:
+      type: file
+      label: Custom error page image
+      size: large
+      destination: 'theme@:/images'
+      multiple: false
+      description: e.g. a broken computer or a horse that says 'ooopsie'. whatever you like.
+      accept:
+        - image/*
     
     

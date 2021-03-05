@@ -1,0 +1,15 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<div class="content--error">
+		<div>
+			<h1 class="http_response">{{ 'PLUGIN_ERROR.ERROR'|t }}
+				{{ page.header.http_response_code }}</h1>
+			{% if theme.funnyexception|first %}
+				{% set logo_file = (theme.funnyexception|first).name %}
+				<img class="sidebar--logo" src="{{ url('theme://images/' ~ logo_file) }}" alt="{{ page.header.http_response_code }}"/>
+			{% endif %}
+			{{ page.content|raw }}
+		</div>
+	</div>
+{% endblock %}

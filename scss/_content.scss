@@ -16,13 +16,22 @@
 }
 
 .content--text,
-.content--project {
+.content--project,
+.content--error {
     margin: 0 auto;
     max-width: 850px;
 
     img {
         max-width: 100%;
         height: auto;
+    }
+}
+
+.content--error {
+    text-align: center;
+
+    .http_response {
+        font-size: 3rem;
     }
 }
 
