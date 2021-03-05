@@ -85,7 +85,7 @@ form:
               type: bool
         .url:
           type: text
-          label: External Link (eg. Social Media)
+          label: External Link (e.g. Social Media)
     copyname:
       type: text
       size: large
