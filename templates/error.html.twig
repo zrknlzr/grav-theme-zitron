@@ -9,7 +9,12 @@
 				{% set logo_file = (theme.funnyexception|first).name %}
 				<img class="sidebar--logo" src="{{ url('theme://images/' ~ logo_file) }}" alt="{{ page.header.http_response_code }}"/>
 			{% endif %}
-			{{ page.content|raw }}
+			{# page.content|raw #}
+			<p>Oh no! Looks like this page doesn`t exist.</p>
+			<p>
+				<a href="{{ base_url == '' ? '/' : base_url }}">Let's get you home, shall we?</a>
+			</p>
+			<p></p>
 		</div>
 	</div>
 {% endblock %}
