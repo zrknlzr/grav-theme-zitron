@@ -35,6 +35,15 @@ form:
       description: If you need a seperate version for mobile
       accept:
         - image/*
+     favicon:
+      type: file
+      label: Website Favicon
+      size: small
+      destination: 'theme@:/images'
+      multiple: false
+      description: Upload a favicon for the browser to display. Has to be an png image.
+      accept:
+        - image/png
     categories:
       type: selectize
       size: large
