@@ -35,7 +35,7 @@ form:
       description: If you need a seperate version for mobile
       accept:
         - image/*
-     favicon:
+    favicon:
       type: file
       label: Website Favicon
       size: small
@@ -43,7 +43,7 @@ form:
       multiple: false
       description: Upload a favicon for the browser to display. Has to be an png image.
       accept:
-        - image/png
+        - image/*
     categories:
       type: selectize
       size: large
