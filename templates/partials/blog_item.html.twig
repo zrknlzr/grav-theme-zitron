@@ -1,0 +1,24 @@
+<div class="blog_item">
+	<div class="item_head">
+		<h2 class="hl-two">
+			<a href="{{ page.url }}" class="">{{ page.title }}</a>
+		</h2>
+		<time class="item_timestamp" datetime="{{ page.date|date("c") }}">
+			<span>{{ page.date|date("d M Y") }}</span>
+		</time>
+	</div>
+	<div class="item_excerpt">
+		{% if page.summary != page.content %}
+			<div class="item_summary">
+				{{ page.summary|raw }}
+				<p>
+					<a href="{{ page.url }}">> read more 1</a>
+				</p>
+			</div>
+		{% else %}
+			<div class="item_content">
+				{{ page.content|raw }}
+			</div>
+		{% endif %}
+	</div>
+</div>
