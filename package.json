@@ -12,8 +12,8 @@
     "scss": "node-sass -o css scss --output-style compressed",
     "postcss": "postcss css/styles.css -r --use autoprefixer",
     "build:all": "npm run js && npm run scss && npm run postcss",
-    "deploy": "mkdir -p ~/Sites/grav/user/themes/zitron && cp -R * ~/Sites/grav/user/themes/zitron/",
-    "fetch:content": "bash contentsync.sh",
+    "fetch:content": "bash contentsync.sh prod",
+    "deploy": "mkdir -p ~/Sites/grav/user/themes/zitron && cp -Rv * ~/Sites/grav/user/themes/zitron/",
     "build:testing": "npm run build:all && npm run deploy"
   },
   "dependencies": {
