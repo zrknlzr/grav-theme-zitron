@@ -13,6 +13,7 @@
     "postcss": "postcss css/styles.css -r --use autoprefixer",
     "build:all": "npm run js && npm run scss && npm run postcss",
     "deploy": "mkdir -p ~/Sites/grav/user/themes/zitron && cp -R * ~/Sites/grav/user/themes/zitron/",
+    "fetch:content": "bash contentsync.sh",
     "build:testing": "npm run build:all && npm run deploy"
   },
   "dependencies": {
@@ -21,10 +22,10 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.0.1",
     "esbuild": "^0.8.32",
     "node-sass": "^5.0.0",
     "postcss": "^8.1.13",
-    "postcss-cli": "^8.2.0",
-    "autoprefixer": "^10.0.1"
+    "postcss-cli": "^8.2.0"
   }
 }
