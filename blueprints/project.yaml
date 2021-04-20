@@ -1,4 +1,7 @@
 title: Project
+'@extends': 
+  type: default
+  context: blueprints://pages 
 
 form:
   fields:
@@ -14,7 +17,7 @@ form:
           fields:
             xss_check:
               type: xss
-
+          
             header.title:
               type: text
               autofocus: true
