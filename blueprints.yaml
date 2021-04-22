@@ -41,9 +41,9 @@ form:
       size: small
       destination: 'theme@:/images'
       multiple: false
-      description: Upload a favicon for the browser to display. Has to be an png image.
+      description: Upload a favicon for the browser to display. Has to be an 180x180 pixel png image.
       accept:
-        - image/*
+        - image/png
     categories:
       type: selectize
       size: large

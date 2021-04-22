@@ -13,12 +13,12 @@
 			<meta content="IE=edge" http-equiv="X-UA-Compatible">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 			{% include 'partials/metadata.html.twig' %}
-
-			<link rel="apple-touch-icon" sizes="180x180" href="{{ url('theme://images/apple-touch-icon.png') }}">
-			<link rel="icon" type="image/png" sizes="32x32" href="{{ url('theme://images/favicon-32x32.png') }}">
-			<link rel="icon" type="image/png" sizes="16x16" href="{{ url('theme://images/favicon-16x16.png') }}">
-			<link rel="canonical" href="{{ page.url(true, true) }}"/>
-
+			{% if theme.favicon %}
+				<link rel="apple-touch-icon" sizes="180x180" href="{{ media['theme://images/favicon.png'].url|e }}">
+				<link rel="icon" type="image/png" sizes="32x32" href="{{ media['theme://images/favicon.png'].resize(32, 32).url|e }}">
+				<link rel="icon" type="image/png" sizes="16x16" href="{{ media['theme://images/favicon.png'].resize(16, 16).url|e }}">
+				<link rel="canonical" href="{{ page.url(true, true) }}"/>
+			{% endif %}
 			{% block stylesheets %}
 				{% do assets.addCss('theme://css/styles.css', 100) %}
 			{% endblock %}
