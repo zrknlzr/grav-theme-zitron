@@ -17,15 +17,15 @@
     "build:testing": "npm run build:all && npm run deploy"
   },
   "dependencies": {
-    "imagesloaded": "^4.1.4",
+    "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
-    "esbuild": "^0.8.32",
-    "node-sass": "^5.0.0",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^8.2.0"
+    "autoprefixer": "^10.4.7",
+    "esbuild": "^0.14.42",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0"
   }
 }
