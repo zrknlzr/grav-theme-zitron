@@ -6,11 +6,17 @@
 			<div class="gallery-sizer"></div>
 			{% for child in page.children %}
 				{% if child.visible %}
+ 
+					{% set height = child.media.all|first.meta.width|integer %}
+					{% set width = child.media.all|first.meta.height|integer %}
+					{% set padding = height / width * 100 %}
+
 					<div class="gallery-item {{ child.taxonomy.category[0]|lower }} ">
 						<a href="{{ child.url }}">
 							{{ child.media.all|first.cache.html|raw }}
 						</a>
 						<span class="">{{ child.title }}</span>
+						<span class="ratio">{{ height }}x{{ width }}</span>
 					</div>
 				{% endif %}
 			{% endfor %}
